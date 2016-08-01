@@ -364,7 +364,7 @@
 
 - (BOOL)assetScrollView:(CTAssetScrollView *)scrollView shouldEnableAsset:(PHAsset *)asset
 {
-    if ([self.picker.delegate respondsToSelector:@selector(assetsPickerController:shouldEnableAsset:)])
+    if ([self.picker shouldSelectAsset:asset] && [self.picker.delegate respondsToSelector:@selector(assetsPickerController:shouldEnableAsset:)])
         return [self.picker.delegate assetsPickerController:self.picker shouldEnableAsset:asset];
     else
         return YES;
@@ -372,6 +372,7 @@
 
 - (BOOL)assetScrollView:(CTAssetScrollView *)scrollView shouldSelectAsset:(PHAsset *)asset
 {
+    if (self.picker.)
     if ([self.picker.delegate respondsToSelector:@selector(assetsPickerController:shouldSelectAsset:)])
         return [self.picker.delegate assetsPickerController:self.picker shouldSelectAsset:asset];
     else

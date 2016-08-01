@@ -155,6 +155,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @name Managing Selections
  */
 
+
+- (BOOL)shouldSelectAsset:(PHAsset *)asset;
+
 /**
  *  Selects an asset in the picker.
  *

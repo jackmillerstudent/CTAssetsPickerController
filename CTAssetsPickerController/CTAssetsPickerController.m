@@ -507,12 +507,14 @@ NSString * const CTAssetsPickerDidDeselectAssetNotification = @"CTAssetsPickerDi
 
 #pragma mark - De/Select asset
 
+- (BOOL)shouldSelectAsset:(PHAsset *)asset {
+    return (self.countOfSelectedAssets < self.maxNumberOfSelections || self.maxNumberOfSelections == 0);
+}
+
 - (void)selectAsset:(PHAsset *)asset
 {
-    if (self.countOfSelectedAssets < self.maxNumberOfSelections || self.maxNumberOfSelections == 0) {
         [self insertObject:asset inSelectedAssetsAtIndex:self.countOfSelectedAssets];
         [self postDidSelectAssetNotification:asset];
-    }
 }
 
 - (void)deselectAsset:(PHAsset *)asset
