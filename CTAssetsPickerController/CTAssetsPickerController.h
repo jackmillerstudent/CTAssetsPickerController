@@ -136,6 +136,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL showsSelectionIndex;
 
 /**
+ *  The maximum number of photos that can be selected.
+ *
+ *  If 0, unlimited photos may be selected.
+ */
+@property (nonatomic, assign) NSInteger maxNumberOfSelections;
+
+
+/**
  *  The split view controller of the picker hierarchy. (read-only)
  *
  *  This property contains the child split view controller of the picker.
